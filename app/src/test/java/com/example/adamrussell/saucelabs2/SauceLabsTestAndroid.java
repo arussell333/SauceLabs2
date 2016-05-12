@@ -1,5 +1,6 @@
 package com.example.adamrussell.saucelabs2;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -73,6 +74,11 @@ import static org.junit.Assert.*;
             driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/left_toggle\")").click();
 
 
+        }
+
+        @After
+        public void tearDown() throws Exception {
+            driver.quit();
         }
 
     }
