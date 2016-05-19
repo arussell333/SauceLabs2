@@ -20,6 +20,7 @@ import static org.junit.Assert.*;
 
     import io.appium.java_client.android.AndroidDriver;
     import io.appium.java_client.remote.MobileCapabilityType;
+    import org.testobject.appium.common.TestObjectCapabilities;
 
     public class SauceLabsTestAndroid {
 
@@ -28,7 +29,8 @@ import static org.junit.Assert.*;
         @Before
         public void testCase()throws  Exception {
 
-           // String deviceId = System.getenv("DEVICE_NAME");
+
+            String deviceId = System.getenv("DEVICE_NAME");
 
             DesiredCapabilities caps = DesiredCapabilities.android();
             caps.setCapability("build", System.getenv("JOB_NAME") + "__" + System.getenv("BUILD_NUMBER"));
@@ -37,7 +39,7 @@ import static org.junit.Assert.*;
             caps.setCapability("browserName", "");
         //  caps.setCapability("deviceName","Android GoogleAPI Emulator");
 
-            caps.setCapability(MobileCapabilityType.DEVICE_NAME, System.getProperty("DeviceName"));
+            caps.setCapability(TestObjectCapabilities.TESTOBJECT_DEVICE, deviceId);
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, System.getProperty("PlatformName"));
             caps.setCapability("platformVersion","5.0");
             caps.setCapability("app","https://s3-eu-west-1.amazonaws.com/bmwchargenow/ChargeNow_v1.apk");
