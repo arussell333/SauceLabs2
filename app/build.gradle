@@ -26,7 +26,3 @@ dependencies {
     compile files('libs/java-client-3.4.1.jar')
     compile files('libs/selenium-server-standalone-2.53.0.jar')
 }
-
-test {
-    systemProperty "deviceName", System.getProperty("DeviceName")
-}
