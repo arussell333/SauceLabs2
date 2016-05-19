@@ -28,13 +28,15 @@ import static org.junit.Assert.*;
         @Before
         public void testCase()throws  Exception {
 
+            String deviceId = System.getenv("DEVICE_NAME");
 
             DesiredCapabilities caps = DesiredCapabilities.android();
             caps.setCapability("build", System.getenv("JOB_NAME") + "__" + System.getenv("BUILD_NUMBER"));
             caps.setCapability("appiumVersion", "1.5.1");
             caps.setCapability("deviceOrientation", "portrait");
             caps.setCapability("browserName", "");
-            caps.setCapability("deviceName","Android GoogleAPI Emulator");
+        //  caps.setCapability("deviceName","Android GoogleAPI Emulator");
+            caps.setCapability(MobileCapabilityType.DEVICE_NAME, System.getProperty("DeviceName"));
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, System.getProperty("PlatformName"));
             caps.setCapability("platformVersion","5.0");
             caps.setCapability("app","https://s3-eu-west-1.amazonaws.com/bmwchargenow/ChargeNow_v1.apk");
