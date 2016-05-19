@@ -28,7 +28,7 @@ import static org.junit.Assert.*;
         @Before
         public void testCase()throws  Exception {
 
-            String deviceId = System.getenv("DEVICE_NAME");
+           // String deviceId = System.getenv("DEVICE_NAME");
 
             DesiredCapabilities caps = DesiredCapabilities.android();
             caps.setCapability("build", System.getenv("JOB_NAME") + "__" + System.getenv("BUILD_NUMBER"));
