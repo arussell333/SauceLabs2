@@ -36,7 +36,8 @@ import static org.junit.Assert.*;
             caps.setCapability("deviceOrientation", "portrait");
             caps.setCapability("browserName", "");
         //  caps.setCapability("deviceName","Android GoogleAPI Emulator");
-            caps.setCapability("deviceName", System.getProperty("DeviceName"));
+
+            caps.setCapability(MobileCapabilityType.DEVICE_NAME, System.getProperty("DeviceName"));
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, System.getProperty("PlatformName"));
             caps.setCapability("platformVersion","5.0");
             caps.setCapability("app","https://s3-eu-west-1.amazonaws.com/bmwchargenow/ChargeNow_v1.apk");
